@@ -6,20 +6,14 @@ The goal is to build a **multi-label image classification model** capable of det
 ---
 
 ## Project Overview
-
 This project explores **transfer learning**, **color-based attention**, and **data augmentation** to handle complex multi-character scenes.  
 Each image may contain one, multiple, or none of the three target characters.  
 Our best model, **ResNet50 with Color Attention** outperformed both **Vision Transformer (ViT)** and **VGG16** baselines used by other team members, achieving the **highest Kaggle leaderboard score** among all submissions.
 
----
 
 ## Dataset and Preprocessing
-
 Custom-labeled images indicating the presence of **SpongeBob**, **Squidward**, and **Patrick**.  
 Each image can feature one, two, or all three characters at once, meaning the labels are not limited to a single class.
-
-
----
 
 ### Data Analysis and Balancing
 The `analyze_data()` function examines the dataset to measure class imbalance and co-occurrence.  
@@ -34,7 +28,6 @@ Results show that **SpongeBob appears more frequently**, while **Squidward and P
 To address this, **Focal Loss** is used with class weights (α) computed from inverse class frequency,  
 and **γ = 2.5** to focus more on difficult or minority examples.
 
----
 
 ### Image Augmentation & Attention
 - **Augmentations:** Random crop, flip, color jitter, noise, and rotation (via Albumentations).  
@@ -43,7 +36,6 @@ and **γ = 2.5** to focus more on difficult or minority examples.
   guiding the model to focus on relevant regions.
 
     These preprocessing steps significantly improved class balance handling and visual focus during training.
----
 
 
 ## Model Architecture
@@ -63,8 +55,6 @@ A lightweight attention layer designed to emphasize color regions characteristic
 Architecture:
 This module multiplies color-based attention masks with ResNet feature maps, guiding the model to focus on relevant regions.
 
----
-
 ## Training Configuration
 
 | Component | Configuration |
@@ -82,7 +72,6 @@ This module multiplies color-based attention masks with ResNet feature maps, gui
 
 **Augmentation:** Extensive Albumentations pipeline (crop, rotate, jitter, noise, and normalization with ImageNet mean/std).
 
----
 
 ## Results & Evaluation
 
