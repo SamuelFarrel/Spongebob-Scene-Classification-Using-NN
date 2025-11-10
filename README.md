@@ -10,6 +10,7 @@ This project explores **transfer learning**, **color-based attention**, and **da
 Each image may contain one, multiple, or none of the three target characters.  
 Our best model, **ResNet50 with Color Attention** outperformed both **Vision Transformer (ViT)** and **VGG16** baselines used by other team members, achieving the **highest Kaggle leaderboard score** among all submissions.
 
+---
 
 ## Dataset and Preprocessing
 Custom-labeled images indicating the presence of **SpongeBob**, **Squidward**, and **Patrick**.  
@@ -37,6 +38,7 @@ and **γ = 2.5** to focus more on difficult or minority examples.
 
     These preprocessing steps significantly improved class balance handling and visual focus during training.
 
+---
 
 ## Model Architecture
 
@@ -55,6 +57,8 @@ A lightweight attention layer designed to emphasize color regions characteristic
 Architecture:
 This module multiplies color-based attention masks with ResNet feature maps, guiding the model to focus on relevant regions.
 
+---
+
 ## Training Configuration
 
 | Component | Configuration |
@@ -72,6 +76,7 @@ This module multiplies color-based attention masks with ResNet feature maps, gui
 
 **Augmentation:** Extensive Albumentations pipeline (crop, rotate, jitter, noise, and normalization with ImageNet mean/std).
 
+---
 
 ## Results & Evaluation
 
