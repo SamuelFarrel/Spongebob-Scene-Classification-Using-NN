@@ -1,4 +1,4 @@
-# SpongeBob Scene Classification — Deep Learning Final Project
+# The Krempengs' SpongeBob Scene Classification using Neural Networks
 
 This group project was developed as the **final project for the *Deep Learning* course** at **Faculty of Computer Science, Universitas Indonesia (UI)**. 
 The goal is to build a **multi-label image classification model** capable of detecting the presence of **SpongeBob, Patrick, and Squidward** in frames from the *SpongeBob SquarePants* series.
